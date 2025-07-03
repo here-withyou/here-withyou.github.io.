@@ -36,7 +36,7 @@
     .cards {
       display: flex;
       justify-content: center;
-      flex-wrap: nowrap;
+      flex-wrap: wrap; /* ✅ allows wrapping on small screens */
       gap: 1.5rem;
       padding: 30px 20px;
       max-width: 1200px;
@@ -150,6 +150,28 @@
       50% { transform: translateY(-10px); }
       100% { transform: translateY(0px); }
     }
+
+    /* ✅ Mobile-friendly adjustments */
+    @media screen and (max-width: 600px) {
+      header h1 {
+        font-size: 2em;
+      }
+
+      .card-box {
+        width: 90%;
+        max-width: none;
+      }
+
+      .posts img {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .contact a {
+        display: block;
+        margin: 10px auto;
+      }
+    }
   </style>
 </head>
 <body>
@@ -157,6 +179,7 @@
     <h1>TypedFeelings <img src="LOGO.PNG" alt="Logo" /></h1>
   </header>
 
+  <!-- Services Cards -->
   <div class="cards">
     <div class="card-box" onclick="location.href='healing.html'">
       <h3>Healing Chat</h3>
@@ -176,6 +199,7 @@
     </div>
   </div>
 
+  <!-- Sample Posts Section -->
   <section class="card posts">
     <span class="emoji emoji1">💭</span>
     <span class="emoji emoji2">🧠</span>
@@ -185,6 +209,7 @@
     <img src="post3.jpeg" alt="Post 3">
   </section>
 
+  <!-- Contact Section -->
   <section class="card contact">
     <span class="emoji emoji2">💬</span>
     <span class="emoji emoji3">✨</span>
@@ -194,6 +219,7 @@
     <a href="https://www.instagram.com/typed_feelings_official?igsh=bWp4OXh3dnl2anB1" target="_blank">GMAIL SUPPORT</a>
   </section>
 
+  <!-- Footer -->
   <footer>
     Privacy: All chats are anonymous. No data is stored. Your feelings are safe here. ❤️
   </footer>
